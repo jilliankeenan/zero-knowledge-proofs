@@ -41,5 +41,6 @@ export function calculateSupermarketPrice(recipes) {
 }
 
 export function allRecipes() {
+  console.log({ recipes })
   return recipes;
 }

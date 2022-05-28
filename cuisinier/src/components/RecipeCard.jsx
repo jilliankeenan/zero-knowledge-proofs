@@ -20,6 +20,7 @@ const Label = styled.p`
     font-size: 1.25rem;
     margin-bottom: .5rem;
     margin-top: .75rem;
+    max-width: 72%;
 `;
 
 const Price = styled.p`

@@ -1,9 +1,12 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { Heading } from "../components/Heading";
 import { SubHeading } from "../components/SubHeading";
 import { RecipeCard } from "../components/RecipeCard";
 import { RecipeFooter } from "../components/RecipeFooter";
 import styled from "styled-components";
+import { DataContext } from '../App'
+import { useNavigate } from 'react-router-dom'
+import { calculateSupermarketPrice } from "../services/service";
 
 const HeadingContainer = styled.div`
     padding-left: 1.5rem;
@@ -36,9 +39,9 @@ const recipesMock = [
 ];
 
 function Recipe() {
-    const budget = 50;
-    const [recipes, setRecipes] = useState(recipesMock);
-    const [selectedRecipes, setSelectedRecipes] = useState([]);
+    const { budget, recipes, setRecipes, selectedRecipes, setSelectedRecipes, setGrocers } = React.useContext(DataContext);
+    let navigate = useNavigate();
+
 
     const selectedRecipeValue = selectedRecipes.map((recipe) => (recipe.cost)).reduce(
         (previousValue, currentValue) => previousValue + currentValue,
@@ -46,10 +49,12 @@ function Recipe() {
     );
 
     const addRecipe = (thisRecipe) => () => {
-        setRecipes(recipes.filter((recipe) => {
-            return recipe.name !== thisRecipe.name;
-        }));
-        setSelectedRecipes([...selectedRecipes, thisRecipe]);
+        if (selectedRecipes.length < 5) {
+            setRecipes(recipes.filter((recipe) => {
+                return recipe.name !== thisRecipe.name;
+            }));
+            setSelectedRecipes([...selectedRecipes, thisRecipe]);
+        }
     };
 
     const removeRecipe = (removalRecipe) => () => {
@@ -57,6 +62,13 @@ function Recipe() {
         setSelectedRecipes(selectedRecipes.filter((thisRecipe) => {
             return thisRecipe.name !== removalRecipe.name;
         }));
+    };
+
+    const onNext = () => {
+        console.log('test', calculateSupermarketPrice(selectedRecipes))
+        navigate("../grocers");
+
+        setGrocers(calculateSupermarketPrice(selectedRecipes))
     };
 
     return (
@@ -78,6 +90,7 @@ function Recipe() {
                 budget={budget - selectedRecipeValue}
                 recipes={selectedRecipes}
                 removeRecipe={removeRecipe}
+                onNext={onNext}
             />
         </>
     );

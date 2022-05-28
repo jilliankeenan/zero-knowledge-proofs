@@ -9,7 +9,6 @@ import { Button } from '../components/Button';
 import styled from "styled-components";
 import { DataContext } from '../App'
 import { useNavigate } from 'react-router-dom'
-import styled from "styled-components";
 
 const Container = styled.div`
     padding-left: 1.5rem;
@@ -27,6 +26,7 @@ function Budget() {
     let navigate = useNavigate();
 
     const handleButtonClick = () => {
+        console.log({ value })
         dataContext.setBudget(value);
         navigate("../dietary-requirements", { replace: true });
     }

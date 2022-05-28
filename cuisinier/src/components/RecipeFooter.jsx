@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Button } from "./Button";
 
 const Container = styled.div`
     position: fixed;
@@ -38,8 +39,10 @@ export const RecipeFooter = (props) => {
     const {
         recipes,
         budget,
-        removeRecipe
+        removeRecipe,
+        onNext
     } = props;
+    const showButton = recipes.length === 5;
 
     return (
         <Container>
@@ -48,9 +51,14 @@ export const RecipeFooter = (props) => {
                     <Image key={recipe.name} onClick={removeRecipe(recipe)} src={recipe.image_path} />
                 ))}
             </Recipes>
-            <Price>
-                £{budget}
-            </Price>
+            {!showButton && (
+                <Price>
+                    £{budget}
+                </Price>
+            )}
+            {showButton && (
+                <Button onButtonClick={onNext}>Next</Button>
+            )}
         </Container>
     );
 };

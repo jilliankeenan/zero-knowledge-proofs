@@ -1,8 +1,9 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { Heading } from "../components/Heading";
 import { SubHeading } from "../components/SubHeading";
 import { GrocerCard } from "../components/GrocerCard";
 import styled from "styled-components";
+import { DataContext } from '../App'
 
 const HeadingContainer = styled.div`
     padding-left: 1.5rem;
@@ -33,7 +34,7 @@ const grocersMock = [
 ];
 
 function Recipe() {
-    const [grocers, setGrocers] = useState(grocersMock);
+    const { grocers, setGrocers } = React.useContext(DataContext);
 
     const selectGrocer = (grocer) => () => {
         console.log({ grocer })

@@ -19,7 +19,7 @@ const Logo = styled.img`
 
 function Entry() {
     let navigate = useNavigate();
-    const handleOnClick = useCallback(() =>  navigate("../selection", { replace: true }));
+    const handleOnClick = () => navigate("../budget", { replace: true });
 
     return (
         <>

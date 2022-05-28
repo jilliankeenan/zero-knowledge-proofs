@@ -2,73 +2,73 @@
   {
     "name": "Chicken pasta bake",
     "dietary_requirements": [],
-    "image_path": "public/assets/recipes/chicken-pasta-bake.jpg",
-    "cost": 5
+    "image_path": "assets/recipes/chicken-pasta-bake.jpg",
+    "cost": 10
   },
   {
     "name": "Chicken & chorizo ragu",
     "dietary_requirements": [],
-    "cost": 5,
-    "image_path": "public/assets/recipes/chicken-chorizo-ragu.jpg"
+    "cost": 8,
+    "image_path": "assets/recipes/chicken-chorizo-ragu.jpg"
   },
   {
     "name": "Vegetarian lasagne",
     "dietary_requirements": ["Vegetarian"],
-    "cost": 5,
-    "image_path": "public/assets/recipes/vegetarian-lasagne.jpg"
+    "cost": 9,
+    "image_path": "assets/recipes/vegetarian-lasagne.jpg"
   },
   {
     "name": "Herby fish fingers with Chinese-style rice",
     "dietary_requirements": ["gluten-free"],
-    "cost": 5,
-    "image_path": "public/assets/recipes/herby-fish-fingers-with-rice.jpg"
+    "cost": 11,
+    "image_path": "assets/recipes/herby-fish-fingers-with-rice.jpg"
   },
   {
     "name": "Easy-to-scale cheesy fish pie with kale",
     "dietary_requirements": [],
-    "cost": 5,
-    "image_path": "public/assets/recipes/fish-pie.jpg"
+    "cost": 15,
+    "image_path": "assets/recipes/fish_pie.jpg"
   },
   {
     "name": "Pulled pork tacos with pineapple salsa",
     "dietary_requirements": [],
     "cost": 5,
-    "image_path": "public/assets/recipes/pulled-pork-pineapple-tacos.jpg"
+    "image_path": "assets/recipes/pulled-pork-pineapple-tacos.jpg"
   },
   {
     "name": "Pork chops & mustardy butter beans",
     "dietary_requirements": [],
-    "cost": 5,
-    "image_path": "public/assets/recipes/pork-chops-mustardy-butter-beans.jpg"
+    "cost": 7,
+    "image_path": "assets/recipes/pork-chops-mustardy-butter-beans.jpg"
   },
   {
     "name": "Meatball & tomsto soup",
     "dietary_requirements": [],
-    "cost": 5,
-    "image_path": "public/assets/recipes/meatball-tomato-soup.jpg"
+    "cost": 4,
+    "image_path": "assets/recipes/meatball-tomato-soup.jpg"
   },
   {
     "name": "Caponata pasta",
     "dietary_requirements": ["Vegetarian"],
-    "cost": 5,
-    "image_path": "public/assets/recipes/caponata-pasta.jpg"
+    "cost": 11,
+    "image_path": "assets/recipes/caponata-pasta.jpg"
   },
   {
     "name": "Coconut & squash dhansak",
     "dietary_requirements": ["Vegetarian"],
-    "cost": 5,
-    "image_path": "public/assets/recipes/coconut-squash-dhansak.jpg"
+    "cost": 13,
+    "image_path": "assets/recipes/coconut-squash-dhansak.jpg"
   },
   {
     "name": "Gnocchi cacio e pepe",
     "dietary_requirements": ["Vegetarian"],
-    "cost": 5,
-    "image_path": "public/assets/recipes/gnocchi-cacio-e-pepe.jpg"
+    "cost": 8,
+    "image_path": "assets/recipes/gnocchi-cacio-e-pepe.jpg"
   },
   {
     "name": "Vegetarian fajitas",
     "dietary_requirements": ["Vegetarian"],
-    "cost": 5,
-    "image_path": "public/assets/recipes/vegetarian-fajitas.jpg"
+    "cost": 10,
+    "image_path": "assets/recipes/veggie-fajitas.jpg"
   }
 ]
