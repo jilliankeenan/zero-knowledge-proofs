@@ -1,24 +1,35 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
+import { ThemeProvider } from "styled-components";
+import theme from "./theme";
+import { Heading } from "./components/Heading";
+import { SubHeading } from "./components/SubHeading";
+import { SteppedInput } from "./components/SteppedInput";
+import { BudgetSlider } from "./components/BudgetSlider";
+import { useStepper } from './hooks/useStepper';
+import { useBudgetSlider } from './hooks/useBudgetSlider';
 
 function App() {
+
+  const { step, onStepUp, onStepDown } = useStepper();
+  const { value, setValue } = useBudgetSlider();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <div className="App">
+        <Heading>Budget</Heading>
+        <SubHeading>How much do you spend for the week?</SubHeading>
+        <BudgetSlider value={value} onChange={setValue} />
+
+        <SubHeading>How many people?</SubHeading>
+
+        <SteppedInput
+          value={step}
+          onStepUp={onStepUp}
+          onStepDown={onStepDown}
+        />
+      </div>
+    </ThemeProvider>
   );
 }
 
