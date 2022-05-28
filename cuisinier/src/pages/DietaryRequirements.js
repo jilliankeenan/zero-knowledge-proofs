@@ -8,7 +8,7 @@ const HeadingContainer = styled.div`
     padding-right: 2rem;
 `;
 
-function Profile() {
+function DietaryRequirements() {
     return (
         <>
             <HeadingContainer>
@@ -26,4 +26,4 @@ function Profile() {
     );
 }
 
-export default Profile;
+export default DietaryRequirements;

@@ -20,7 +20,7 @@ margin-bottom: 50px;
 
 `;
 
-const recipes = [
+const recipesMock = [
     {
         "name": "Chicken pasta bake",
         "dietary_requirements": ["Vegetarian"],
@@ -37,17 +37,27 @@ const recipes = [
 
 function Recipe() {
     const budget = 50;
+    const [recipes, setRecipes] = useState(recipesMock);
     const [selectedRecipes, setSelectedRecipes] = useState([]);
 
-    const addRecipe = (recipe) => () => {
-        // remove from recipes list
-        setSelectedRecipes([...selectedRecipes, recipe]);
+    const selectedRecipeValue = selectedRecipes.map((recipe) => (recipe.cost)).reduce(
+        (previousValue, currentValue) => previousValue + currentValue,
+        0
+    );
+
+    console.log({selectedRecipeValue})
+
+    const addRecipe = (thisRecipe) => () => {
+        setRecipes(recipes.filter((recipe) => {
+            return recipe.name !== thisRecipe.name;
+        }));
+        setSelectedRecipes([...selectedRecipes, thisRecipe]);
     };
 
     const removeRecipe = (removalRecipe) => () => {
-        // add to recipes list
-        setSelectedRecipes(recipes.filter((recipe) => {
-            return recipe.name !== removalRecipe.name;
+        setRecipes([...recipes, removalRecipe]);
+        setSelectedRecipes(selectedRecipes.filter((thisRecipe) => {
+            return thisRecipe.name !== removalRecipe.name;
         }));
     };
 
@@ -67,7 +77,7 @@ function Recipe() {
                 ))}
             </HeadingContainer>
             <RecipeFooter
-                budget={budget}
+                budget={budget - selectedRecipeValue}
                 recipes={selectedRecipes}
                 removeRecipe={removeRecipe}
             />
