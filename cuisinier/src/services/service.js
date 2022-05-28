@@ -68,22 +68,22 @@ export function calculateSupermarketPrice(recipes) {
     {
       name: "Tesco",
       imagePath: tescoLogoPath,
-      tescoTotalCost: tescoTotalCost.toFixed(2),
+      total: tescoTotalCost.toFixed(2),
     },
     {
       name: "Asda",
       imagePath: asdaLogoPath,
-      asdaTotalCost: asdaTotalCost.toFixed(2),
+      total: asdaTotalCost.toFixed(2),
     },
     {
       name: "Sainsburys",
       imagePath: sainsburysLogoPath,
-      sainsburysTotalCost: sainsburysTotalCost.toFixed(2),
+      total: sainsburysTotalCost.toFixed(2),
     },
     {
       name: "M&S",
       imagePath: mandsLogoPath,
-      mandsTotalCost: mandsTotalCost.toFixed(2),
+      total: mandsTotalCost.toFixed(2),
     },
   ];
   return totalCosts;
