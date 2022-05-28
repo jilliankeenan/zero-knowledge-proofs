@@ -1,5 +1,5 @@
 import logo from "../images/moneytree.png"
-import React, {useCallback} from "react";
+import React, { useCallback } from "react";
 import styled, { useTheme, keyframes } from "styled-components";
 import { bounce, bounceIn, slideInLeft, flip } from 'react-animations';
 import { useNavigate } from 'react-router-dom'
@@ -16,15 +16,23 @@ const Logo = styled.img`
    height: 330px;
 `;
 
+const Box = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+`
+
 
 function Entry() {
     let navigate = useNavigate();
     const handleOnClick = () => navigate("../budget", { replace: true });
 
     return (
-        <>
+        <Box>
             <Logo src={logo} alt="My logo" onClick={handleOnClick} />
-        </>
+        </Box>
     )
 }
 

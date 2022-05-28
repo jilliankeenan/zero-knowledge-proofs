@@ -68,7 +68,7 @@ const Image = styled.img`
 
 export const GrocerCard = (props) => {
     const {
-        image_path,
+        imagePath,
         total,
         isLowest,
         onClick
@@ -77,7 +77,7 @@ export const GrocerCard = (props) => {
     return (
         <Container onClick={onClick}>
             <Center>
-                <Image src={image_path} alt="grocer" />
+                <Image src={imagePath} alt="grocer" />
             </Center>
             <Box onClick={onClick}>
                 <Flex>

@@ -4,6 +4,7 @@ import { SubHeading } from "../components/SubHeading";
 import { GrocerCard } from "../components/GrocerCard";
 import styled from "styled-components";
 import { DataContext } from '../App'
+import { useNavigate } from 'react-router-dom'
 
 const HeadingContainer = styled.div`
     padding-left: 1.5rem;
@@ -35,9 +36,13 @@ const grocersMock = [
 
 function Recipe() {
     const { grocers, setGrocers } = React.useContext(DataContext);
+    let navigate = useNavigate();
 
     const selectGrocer = (grocer) => () => {
         console.log({ grocer })
+
+        window.location.href = "https://www.tesco.com/groceries/en-GB/multi-search"; 
+
     };
 
     return (

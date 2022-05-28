@@ -1,9 +1,9 @@
 import recipes from "./recipe_manual.json";
 
-const tescoLogoPath = "public/assets/logos/teso.png";
-const asdaLogoPath = "public/assets/logos/asda.png";
-const sainsburysLogoPath = "public/assets/logos/sainsburys.png";
-const mandsLogoPath = "public/assets/logos/mands.png";
+const tescoLogoPath = "assets/logos/tesco.png";
+const asdaLogoPath = "assets/logos/asda.png";
+const sainsburysLogoPath = "assets/logos/sainsburys.png";
+const mandsLogoPath = "assets/logos/mands.png";
 
 export function recipesToString() {
   return JSON.stringify(recipes);
