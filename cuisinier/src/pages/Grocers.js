@@ -12,7 +12,22 @@ const HeadingContainer = styled.div`
 const grocersMock = [
     {
         "name": "Tesco",
-        "image_path": "/assets/test.jpeg",
+        "image_path": "/assets/logos/tesco.png",
+        "total": 52.50
+    },
+    {
+        "name": "Asda",
+        "image_path": "/assets/logos/asda.png",
+        "total": 52.50
+    },
+    {
+        "name": "Sainsburys",
+        "image_path": "/assets/logos/sainsburys.png",
+        "total": 52.50
+    },
+    {
+        "name": "Marks & Spencers",
+        "image_path": "/assets/logos/mands.png",
         "total": 52.50
     },
 ];
@@ -31,10 +46,11 @@ function Recipe() {
                 <SubHeading>Choose the most suitable grocer?</SubHeading>
             </HeadingContainer>
             <HeadingContainer>
-                {grocers.map((grocer) => (
+                {grocers.map((grocer, index) => (
                     <GrocerCard
                         key={grocer.name}
                         onClick={selectGrocer(grocer)}
+                        isLowest={index === 0}
                         {...grocer}
                     />
                 ))}

@@ -8,63 +8,80 @@ const Container = styled.div`
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
     color: ${(props) => props.theme.color.text};
     margin-bottom: 1.5rem;
+    position: relative;
 `;
 
 const Box = styled.div`
     padding-left: 1.5rem;
     padding-right: 2rem;
-    position: relative;
+    padding-top: .75rem;
+    padding-bottom: 1rem;
+    border-top: 1px solid ${(props) => props.theme.color.gray};
 `;
 
 const Label = styled.p`
     font-size: 1.25rem;
     margin-bottom: .5rem;
     margin-top: .75rem;
+    text-align: right;
 `;
 
-const Price = styled.p`
+const Price = styled.span`
     font-size: 1.25rem;
     margin-bottom: 0rem;
     margin-top: 0rem;
-    position: absolute;
-    right: 30px;
-    top: 14px;
+    font-weight: bold;
 `;
 
 const Pill = styled.p`
     font-size: 1rem;
-    margin-top: 0;
+    margin-top: .5rem;
     border-radius: 8px;
     padding-left: .5rem;
     padding-right: .5rem;
     background: ${props => props.theme.color.special};
     width: fit-content;
     color: white;
+    position: absolute;
+    top: -17px;
+    left: -15px;
+`;
+
+const Center = styled.div`
+    width: 100%;
+    display: flex;
+    justify-content: center;
 `;
 
 const Image = styled.img`
-    width: 100%;
-    height: 125px;
-    object-fit: cover;
+    height: 100px;
+    object-fit: contain;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
 `;
 
 export const GrocerCard = (props) => {
     const {
-        name,
         image_path,
         total,
+        isLowest,
         onClick
     } = props;
 
     return (
         <Container onClick={onClick}>
-            <Image src={image_path} alt="grocer" />
+            <Center>
+                <Image src={image_path} alt="grocer" />
+            </Center>
             <Box onClick={onClick}>
-                <Label>{name}</Label>
-                <Pill>Lowest Price</Pill>
-                <Price>
+                <Label>Total: <Price>
                     £{total}
                 </Price>
+                </Label>
+
+                {isLowest && (
+                    <Pill>Best Value</Pill>
+                )}
             </Box>
         </Container>
     );
