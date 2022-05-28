@@ -45,8 +45,6 @@ function Recipe() {
         0
     );
 
-    console.log({selectedRecipeValue})
-
     const addRecipe = (thisRecipe) => () => {
         setRecipes(recipes.filter((recipe) => {
             return recipe.name !== thisRecipe.name;
