@@ -1,5 +1,10 @@
 import recipes from "./recipe_manual.json";
 
+const tescoLogoPath = "public/assets/logos/teso.png";
+const asdaLogoPath = "public/assets/logos/asda.png";
+const sainsburysLogoPath = "public/assets/logos/sainsburys.png";
+const mandsLogoPath = "public/assets/logos/mands.png";
+
 export function recipesToString() {
   return JSON.stringify(recipes);
 }
@@ -20,8 +25,10 @@ const modifiers = {
 };
 function getCost(baseCost, shop) {
   const trueCost = baseCost * modifiers[shop] + Math.random();
-  return trueCost.toFixed(2);
+  return trueCost;
 }
+
+function getTotalCost() {}
 
 export function calculateSupermarketPrice(recipes) {
   console.log("recipes", recipes);
@@ -30,14 +37,56 @@ export function calculateSupermarketPrice(recipes) {
   for (let i = 0; i < recipes.length; i++) {
     let recipe = recipes[i];
     calculatedRecipeCosts.push({
-      recipeName: recipe.name,
       tescoCost: getCost(recipe.cost, "tesco"),
       asdaCost: getCost(recipe.cost, "asda"),
       sainsburysCost: getCost(recipe.cost, "sainsburys"),
       mandsCost: getCost(recipe.cost, "mands"),
     });
   }
-  return calculatedRecipeCosts;
+
+  const tescoTotalCost = calculatedRecipeCosts
+    .map((x) => x.tescoCost)
+    .reduce((previous, current) => {
+      return previous + current;
+    }, 0);
+  const asdaTotalCost = calculatedRecipeCosts
+    .map((x) => x.asdaCost)
+    .reduce((previous, current) => {
+      return previous + current;
+    }, 0);
+  const sainsburysTotalCost = calculatedRecipeCosts
+    .map((x) => x.sainsburysCost)
+    .reduce((previous, current) => {
+      return previous + current;
+    }, 0);
+  const mandsTotalCost = calculatedRecipeCosts
+    .map((x) => x.mandsCost)
+    .reduce((previous, current) => {
+      return previous + current;
+    }, 0);
+  let totalCosts = [
+    {
+      name: "Tesco",
+      imagePath: tescoLogoPath,
+      total: tescoTotalCost.toFixed(2),
+    },
+    {
+      name: "Asda",
+      imagePath: asdaLogoPath,
+      total: asdaTotalCost.toFixed(2),
+    },
+    {
+      name: "Sainsburys",
+      imagePath: sainsburysLogoPath,
+      total: sainsburysTotalCost.toFixed(2),
+    },
+    {
+      name: "M&S",
+      imagePath: mandsLogoPath,
+      total: mandsTotalCost.toFixed(2),
+    },
+  ];
+  return totalCosts;
 }
 
 export function allRecipes() {
