@@ -3,12 +3,10 @@ import styled from "styled-components";
 
 const Container = styled.div`
     display: flex;
-    height: 2rem;
 `;
 
 const StyledButton = styled.button`
     height: 46px;
-    width: 80px;
     font-size: 1.25rem;
     background-color: ${props => props.theme.color.primary};
     color: white;
@@ -40,3 +38,4 @@ export const Button = ({ onButtonClick, children }) => {
         </Container>
     );
 };
+
