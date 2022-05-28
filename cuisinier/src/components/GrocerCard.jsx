@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Button } from "./Button";
 
 const Container = styled.div`
     font-size: 1.25rem;
@@ -17,6 +18,11 @@ const Box = styled.div`
     padding-top: .75rem;
     padding-bottom: 1rem;
     border-top: 1px solid ${(props) => props.theme.color.gray};
+`;
+
+const Flex = styled.div`
+    display: flex;
+    justify-content: space-between;
 `;
 
 const Label = styled.p`
@@ -74,15 +80,17 @@ export const GrocerCard = (props) => {
                 <Image src={image_path} alt="grocer" />
             </Center>
             <Box onClick={onClick}>
-                <Label>Total: <Price>
-                    £{total}
-                </Price>
-                </Label>
-
+                <Flex>
+                    <Label>Total: <Price>
+                        £{total}
+                    </Price>
+                    </Label>
+                    <Button onClick={onClick}>Checkout</Button>
+                </Flex>
                 {isLowest && (
                     <Pill>Best Value</Pill>
                 )}
             </Box>
-        </Container>
+        </Container >
     );
 };
