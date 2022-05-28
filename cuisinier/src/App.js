@@ -9,9 +9,8 @@ import {
   Routes
 } from "react-router-dom";
 import Budget from './pages/Budget'
-import Profile from './pages/Profile'
+import DietaryRequirements from './pages/DietaryRequirements'
 import Grocers from './pages/Grocers'
-import Splash from './pages/Splash'
 import Complete from './pages/Complete'
 import Recipe from './pages/Recipe'
 import Entry from './pages/Entry'
@@ -34,18 +33,17 @@ const [budget, setBudget] = useState(50)
       <ThemeProvider theme={theme}>
         <BrowserRouter>
           <Routes>
-            <Route path="/complete" element={<Complete />} />
-            <Route path="/recipe" element={<Recipe />} />
-            <Route path="/grocers" element={<Grocers />} />
-            <Route path="/profile" element={<Profile />} />
-            <Route path="/budget" element={<Budget />} />
-            <Route path="/splash" element={<Splash />} />
-            <Route path="/selection" element={<Selection />} />
-            <Route path="/" element={<Entry />} />
-          </Routes>
+          <Route path="/complete" element={<Complete />} />
+          <Route path="/grocers" element={<Grocers />} />
+          <Route path="/recipe" element={<Recipe />} />
+          <Route path="/dietary-requirements" element={<DietaryRequirements />} />
+          <Route path="/budget" element={<Budget />} />
+          <Route path="/selection" element={<Selection />} />
+          <Route path="/" element={<Entry />} />
+        </Routes>
         </BrowserRouter>
       </ThemeProvider>
-    </DataContext.Provider>
+    </DataContext.Provider
   );
 }
 

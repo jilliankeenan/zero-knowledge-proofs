@@ -2,7 +2,8 @@ const theme = {
     color: {
         primary: "#20a1b9",
         primaryDark: "#20a1b9",
-        gray: "#8AEA92",
+        special: "#ba1b51",
+        gray: "#e9e9e9",
         text: "#0C090D"
     }
 };

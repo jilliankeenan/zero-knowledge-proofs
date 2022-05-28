@@ -9,6 +9,12 @@ import { Button } from '../components/Button';
 import styled from "styled-components";
 import { DataContext } from '../App'
 import { useNavigate } from 'react-router-dom'
+import styled from "styled-components";
+
+const Container = styled.div`
+    padding-left: 1.5rem;
+    padding-right: 2rem;
+`;
 
 const ButtonContainer = styled.div`
     margin-left: 230px;
@@ -26,7 +32,7 @@ function Budget() {
     }
 
     return (
-        <>
+        <Container>
             <Heading>Budget</Heading>
             <SubHeading>How much do you spend for the week?</SubHeading>
             <BudgetSlider value={value} onChange={setValue} />
@@ -39,7 +45,7 @@ function Budget() {
             <ButtonContainer>
                 <Button onButtonClick={() => handleButtonClick()}>Next</Button>
             </ButtonContainer>
-        </>
+        </Container>
     );
 }
 

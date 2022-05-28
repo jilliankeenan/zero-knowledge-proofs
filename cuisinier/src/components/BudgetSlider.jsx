@@ -8,7 +8,7 @@ const Text = styled.p`
 `;
 
 const Container = styled.div`
-    margin-bottom: 2rem;
+    margin-bottom: 5rem;
 `;
 
 const marks = {
