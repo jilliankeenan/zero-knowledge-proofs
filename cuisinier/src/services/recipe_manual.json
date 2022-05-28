@@ -1,0 +1,74 @@
+[
+  {
+    "name": "Chicken pasta bake",
+    "dietary_requirements": [],
+    "image_path": "public/assets/recipes/chicken-pasta-bake.jpg",
+    "cost": 5
+  },
+  {
+    "name": "Chicken & chorizo ragu",
+    "dietary_requirements": [],
+    "cost": 5,
+    "image_path": "public/assets/recipes/chicken-chorizo-ragu.jpg"
+  },
+  {
+    "name": "Vegetarian lasagne",
+    "dietary_requirements": ["vegetarian"],
+    "cost": 5,
+    "image_path": "public/assets/recipes/vegetarian-lasagne.jpg"
+  },
+  {
+    "name": "Herby fish fingers with Chinese-style rice",
+    "dietary_requirements": ["gluten-free"],
+    "cost": 5,
+    "image_path": "public/assets/recipes/herby-fish-fingers-with-rice.jpg"
+  },
+  {
+    "name": "Easy-to-scale cheesy fish pie with kale",
+    "dietary_requirements": [],
+    "cost": 5,
+    "image_path": "public/assets/recipes/fish-pie.jpg"
+  },
+  {
+    "name": "Pulled pork tacos with pineapple salsa",
+    "dietary_requirements": [],
+    "cost": 5,
+    "image_path": "public/assets/recipes/pulled-pork-pineapple-tacos.jpg"
+  },
+  {
+    "name": "Pork chops & mustardy butter beans",
+    "dietary_requirements": [],
+    "cost": 5,
+    "image_path": "public/assets/recipes/pork-chops-mustardy-butter-beans.jpg"
+  },
+  {
+    "name": "Meatball & tomsto soup",
+    "dietary_requirements": [],
+    "cost": 5,
+    "image_path": "public/assets/recipes/meatball-tomato-soup.jpg"
+  },
+  {
+    "name": "Caponata pasta",
+    "dietary_requirements": ["vegetarian"],
+    "cost": 5,
+    "image_path": "public/assets/recipes/caponata-pasta.jpg"
+  },
+  {
+    "name": "Coconut & squash dhansak",
+    "dietary_requirements": ["vegetarian"],
+    "cost": 5,
+    "image_path": "public/assets/recipes/coconut-squash-dhansak.jpg"
+  },
+  {
+    "name": "Gnocchi cacio e pepe",
+    "dietary_requirements": ["vegetarian"],
+    "cost": 5,
+    "image_path": "public/assets/recipes/gnocchi-cacio-e-pepe.jpg"
+  },
+  {
+    "name": "Vegetarian fajitas",
+    "dietary_requirements": ["vegetarian"],
+    "cost": 5,
+    "image_path": "public/assets/recipes/vegetarian-fajitas.jpg"
+  }
+]
