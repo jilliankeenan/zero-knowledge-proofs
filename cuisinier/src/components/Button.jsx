@@ -15,6 +15,8 @@ const StyledButton = styled.button`
     border: none;
     font-family: 'Poppins', sans-serif;
 
+    ${props => props.big ? 'width: 500px;' : ''}
+
     &:hover {
         transition: all 150ms linear;
         opacity: .85;
@@ -30,11 +32,11 @@ const StyledButton = styled.button`
       }
 `;
 
-export const Button = ({ onButtonClick, children }) => {
+export const Button = ({ onButtonClick, children, big }) => {
 
     return (
-        <Container>
-            <StyledButton onClick={onButtonClick}>{children}</StyledButton>
+        <Container >
+            <StyledButton big={big} onClick={onButtonClick}>{children}</StyledButton>
         </Container>
     );
 };

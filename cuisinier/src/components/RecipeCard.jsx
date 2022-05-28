@@ -48,13 +48,28 @@ const Image = styled.img`
     object-fit: cover;
 `;
 
+const Pill2 = styled.p`
+    font-size: 1rem;
+    margin-top: .5rem;
+    border-radius: 8px;
+    padding-left: .5rem;
+    padding-right: .5rem;
+    background: ${props => props.theme.color.special};
+    width: fit-content;
+    color: white;
+    position: absolute;
+    top: -163px;
+    left: -15px;
+`;
+
 export const RecipeCard = (props) => {
     const {
         name,
         dietary_requirements,
         image_path,
         cost,
-        onClick
+        onClick,
+        isLowest
     } = props;
 
     return (
@@ -68,6 +83,9 @@ export const RecipeCard = (props) => {
                 <Price>
                     £{cost}
                 </Price>
+                {isLowest && (
+                    <Pill2>Recommended</Pill2>
+                )}
             </Box>
         </Container>
     );

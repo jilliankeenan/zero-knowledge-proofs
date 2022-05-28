@@ -42,6 +42,8 @@ function Recipe() {
     const { budget, recipes, setRecipes, selectedRecipes, setSelectedRecipes, setGrocers } = React.useContext(DataContext);
     let navigate = useNavigate();
 
+    const [isDirty, setIsDirty] = useState(false);
+
 
     const selectedRecipeValue = selectedRecipes.map((recipe) => (recipe.cost)).reduce(
         (previousValue, currentValue) => previousValue + currentValue,
@@ -49,6 +51,7 @@ function Recipe() {
     );
 
     const addRecipe = (thisRecipe) => () => {
+        setIsDirty(true);
         if (selectedRecipes.length < 5) {
             setRecipes(recipes.filter((recipe) => {
                 return recipe.name !== thisRecipe.name;
@@ -78,10 +81,11 @@ function Recipe() {
                 <SubHeading>What would you like?</SubHeading>
             </HeadingContainer>
             <HeadingContainer>
-                {recipes.map((recipe) => (
+                {recipes.map((recipe, index) => (
                     <RecipeCard
                         key={recipe.name}
                         onClick={addRecipe(recipe)}
+                        isLowest={!isDirty && index === 0}
                         {...recipe}
                     />
                 ))}

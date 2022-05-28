@@ -43,7 +43,7 @@ function Budget() {
                 onStepDown={onStepDown}
             />
             <ButtonContainer>
-                <Button onButtonClick={() => handleButtonClick()}>Next</Button>
+                <Button big={true} onButtonClick={() => handleButtonClick()}>Next</Button>
             </ButtonContainer>
         </Container>
     );

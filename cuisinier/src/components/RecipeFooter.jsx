@@ -18,6 +18,12 @@ const Container = styled.div`
 `;
 
 const Image = styled.img`
+
+    @keyframes fadein {
+        from { opacity: 0; }
+        to   { opacity: 1; }
+    }
+    animation: fadein .2s;
     height: 50px;
     width: 50px;
     margin-left: .5rem;
