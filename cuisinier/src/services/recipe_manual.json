@@ -13,7 +13,7 @@
   },
   {
     "name": "Vegetarian lasagne",
-    "dietary_requirements": ["vegetarian"],
+    "dietary_requirements": ["Vegetarian"],
     "cost": 5,
     "image_path": "public/assets/recipes/vegetarian-lasagne.jpg"
   },
@@ -49,25 +49,25 @@
   },
   {
     "name": "Caponata pasta",
-    "dietary_requirements": ["vegetarian"],
+    "dietary_requirements": ["Vegetarian"],
     "cost": 5,
     "image_path": "public/assets/recipes/caponata-pasta.jpg"
   },
   {
     "name": "Coconut & squash dhansak",
-    "dietary_requirements": ["vegetarian"],
+    "dietary_requirements": ["Vegetarian"],
     "cost": 5,
     "image_path": "public/assets/recipes/coconut-squash-dhansak.jpg"
   },
   {
     "name": "Gnocchi cacio e pepe",
-    "dietary_requirements": ["vegetarian"],
+    "dietary_requirements": ["Vegetarian"],
     "cost": 5,
     "image_path": "public/assets/recipes/gnocchi-cacio-e-pepe.jpg"
   },
   {
     "name": "Vegetarian fajitas",
-    "dietary_requirements": ["vegetarian"],
+    "dietary_requirements": ["Vegetarian"],
     "cost": 5,
     "image_path": "public/assets/recipes/vegetarian-fajitas.jpg"
   }
