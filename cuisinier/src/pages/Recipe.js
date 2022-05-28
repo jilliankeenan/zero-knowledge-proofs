@@ -3,10 +3,13 @@ import { Heading } from "../components/Heading";
 import { SubHeading } from "../components/SubHeading";
 import { RecipeCard } from "../components/RecipeCard";
 import { RecipeFooter } from "../components/RecipeFooter";
-import styled from "styled-components";
+import styled, {keyframes} from "styled-components";
 import { DataContext } from '../App'
 import { useNavigate } from 'react-router-dom'
 import { calculateSupermarketPrice } from "../services/service";
+import { bounce, bounceIn, slideInUp, flip } from 'react-animations';
+
+const bounceAnimation = keyframes`${flip}`;
 
 const HeadingContainer = styled.div`
     padding-left: 1.5rem;
@@ -22,6 +25,10 @@ const Content = styled.div`
 margin-bottom: 50px;
 
 `;
+
+// const StyledRecipe = styled(RecipeCard)`
+//     animation: 3s ${bounceAnimation};
+// `;
 
 const recipesMock = [
     {

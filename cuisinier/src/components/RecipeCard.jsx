@@ -1,5 +1,8 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+import { bounce, bounceIn, slideInUp, flip } from 'react-animations';
+
+const bounceAnimation = keyframes`${slideInUp}`;
 
 const Container = styled.div`
     font-size: 1.25rem;
@@ -8,6 +11,7 @@ const Container = styled.div`
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
     color: ${(props) => props.theme.color.text};
     margin-bottom: 1.5rem;
+    animation: .5s ${bounceAnimation};
 `;
 
 const Box = styled.div`
