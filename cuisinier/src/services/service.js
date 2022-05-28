@@ -25,7 +25,7 @@ const modifiers = {
 };
 function getCost(baseCost, shop) {
   const trueCost = baseCost * modifiers[shop] + Math.random();
-  return trueCost.toFixed(2);
+  return trueCost;
 }
 
 function getTotalCost() {}
@@ -68,22 +68,22 @@ export function calculateSupermarketPrice(recipes) {
     {
       name: "Tesco",
       imagePath: tescoLogoPath,
-      tescoTotalCost,
+      tescoTotalCost: tescoTotalCost.toFixed(2),
     },
     {
       name: "Asda",
       imagePath: asdaLogoPath,
-      asdaTotalCost,
+      asdaTotalCost: asdaTotalCost.toFixed(2),
     },
     {
       name: "Sainsburys",
       imagePath: sainsburysLogoPath,
-      sainsburysTotalCost,
+      sainsburysTotalCost: sainsburysTotalCost.toFixed(2),
     },
     {
       name: "M&S",
       imagePath: mandsLogoPath,
-      mandsTotalCost,
+      mandsTotalCost: mandsTotalCost.toFixed(2),
     },
   ];
   return totalCosts;
